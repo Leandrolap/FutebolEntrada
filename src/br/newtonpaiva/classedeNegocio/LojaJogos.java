@@ -4,6 +4,20 @@ import javax.swing.*;
 
 public class LojaJogos {
     public static void main(String[] args) {
+
+        adquirirIngresso();
+        String pergOutroJogo = JOptionPane.showInputDialog(null, "Deseja ingresso de outro jogo?");
+
+        if(pergOutroJogo == "sim"){
+            adquirirIngresso();
+        }
+        else{
+            System.out.println("Pedido Finalizado");
+        }
+
+    }
+
+    public static void adquirirIngresso(){
         Ingresso ingrss = new Ingresso();
 
         Cliente cl = new Cliente();
@@ -20,15 +34,21 @@ public class LojaJogos {
         ingrss.setValor(valorJogo);
         ingrss.setQtd(qtdBilhete);
         ped.calcule();
+        ped.cliente();
 
         if (qtdBilhete > 1){
             int i;
 
             for (i = 0; i< qtdBilhete; i++){
                 String nomeUsuario1 = JOptionPane.showInputDialog(null, "Informe o nome");
-                Double valorJogo1 = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor do ingresso"));
-                ped.calcule();
+                //Double valorJogo1 = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor do ingresso"));
+                cl.setNome(nomeUsuario);
+                ped.cliente();
             }
         }
+
+        for(int i = 0; i<ped.cl.size(); i++){
+        }
+        System.out.println("Pedido feito para: " + ped.getCli() + ", " + ingrss.getQtd() + " Ingressos: " + ingrss.getJogo() + ".");
     }
 }

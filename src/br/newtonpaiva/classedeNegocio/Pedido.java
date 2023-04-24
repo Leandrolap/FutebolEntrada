@@ -6,13 +6,21 @@ import java.util.List;
 public class Pedido {
     Ingresso ingr = new Ingresso();
     Cliente cli = new Cliente();
-
-    List<Cliente> cl = new ArrayList<Cliente>();
-    List<Ingresso> ingressos = new ArrayList<>();
+    List<String> cl = new ArrayList<String>();
+    public Double total;
 
     public void calcule(){
        Double ih = ingr.getValor();
        Integer ihh = ingr.getQtd();
-       Double total = ih * ihh;
+       total = ih * ihh;
+
+    }
+
+    public void cliente(){
+        cl.add(cli.getNome());
+    }
+
+    public Cliente getCli() {
+        return cli;
     }
 }
