@@ -5,22 +5,16 @@ import java.util.List;
 
 public class Pedido {
     Ingresso ingr = new Ingresso();
-    Cliente cli = new Cliente();
-    List<String> cl = new ArrayList<String>();
     public Double total;
 
     public void calcule(){
-       Double ih = ingr.getValor();
-       Integer ihh = ingr.getQtd();
-       total = ih * ihh;
+        try {
+            Double ih = ingr.valor;
+            Integer ihh = ingr.qtd;
+            total = ih * ihh;
 
-    }
-
-    public void cliente(){
-        cl.add(cli.getNome());
-    }
-
-    public Cliente getCli() {
-        return cli;
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 }

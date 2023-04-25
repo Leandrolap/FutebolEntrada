@@ -34,7 +34,7 @@ public class LojaJogos {
         ingrss.setValor(valorJogo);
         ingrss.setQtd(qtdBilhete);
         ped.calcule();
-        ped.cliente();
+        //ped.cliente();
 
         if (qtdBilhete > 1){
             int i;
@@ -42,13 +42,13 @@ public class LojaJogos {
             for (i = 0; i< qtdBilhete; i++){
                 String nomeUsuario1 = JOptionPane.showInputDialog(null, "Informe o nome");
                 //Double valorJogo1 = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor do ingresso"));
-                cl.setNome(nomeUsuario);
-                ped.cliente();
+                cl.nome = nomeUsuario;
+                //ped.cliente();
             }
         }
 
-        for(int i = 0; i<ped.cl.size(); i++){
+        for(int i = 0; i<cl.cl.size(); i++){
         }
-        System.out.println("Pedido feito para: " + ped.getCli() + ", " + ingrss.getQtd() + " Ingressos: " + ingrss.getJogo() + ".");
+        System.out.println("Pedido feito para: " + cl.cl + ", " + ingrss.getQtd() + " Ingressos: " + ingrss.getJogo() + ".");
     }
 }
